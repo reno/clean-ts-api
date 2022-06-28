@@ -9,5 +9,8 @@ export default {
   testEnvironment: "node",
   transform: {
     "^.+\\.ts$": "ts-jest"
-  }
+  },
+  testMatch: [
+    '**/src/**/*.spec.ts',
+  ]
 };
