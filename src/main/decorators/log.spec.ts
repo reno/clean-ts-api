@@ -30,7 +30,7 @@ const makeSut = (): SutTypes => {
 
 describe('LogController decorator', () => {
 
-  test('should log the request', async () => {
+  test('should call controller handle', async () => {
     const { sut, controllerStub } = makeSut()
     const spy = jest.spyOn(controllerStub, 'handle')
     const httpRequest = {
