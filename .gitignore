@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# OSX system files
+.DS_Store
+
+# Jest in memory Mongo config
+globalConfig.json
