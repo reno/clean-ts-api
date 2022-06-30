@@ -12,6 +12,7 @@
     "@types/jest": "^28.1.3",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^18.0.0",
+    "@types/supertest": "^2.0.12",
     "@types/validator": "^13.7.3",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "add": "^2.0.6",
@@ -25,6 +26,7 @@
     "jest": "^28.1.1",
     "lint-staged": "^13.0.3",
     "sucrase": "^3.22.0",
+    "supertest": "^6.2.3",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
     "typescript": "^4"
@@ -33,8 +35,8 @@
     "start": "sucrase-node src/main/server.ts",
     "test": "jest --watch --silent --noStackTrace --runInBand",
     "test:verbose": "jest --watch",
-    "test:unit": "yarn test -c jest-unit-config.js",
-    "test:integration": "yarn test -c jest-integration-config.js",
+    "test:unit": "yarn test -c jest-unit-config.ts",
+    "test:integration": "yarn test -c jest-integration-config.ts",
     "test:staged": "yarn test --passWithNoTests --findRelatedTests",
     "test:ci": "yarn test --coverage"
   },
