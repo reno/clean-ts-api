@@ -1,4 +1,4 @@
 export interface LogErrorRepository {
 
-  async log(stack: string): Promise<void> { }
+  async logError(stack: string): Promise<void> { }
 }
