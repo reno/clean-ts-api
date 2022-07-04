@@ -6,11 +6,8 @@ import { AccountMongoRepository } from '../../../infra/database/mongodb/account/
 import { LogMongoRepository } from '../../../infra/database/mongodb/log/log-repository'
 import { Controller } from '../../../presentation/protocols'
 import { LogControllerDecorator } from '../../decorators/log'
-import { ValidationComposite } from '../../../presentation/helpers/validators/validation-composite'
+import { ValidationComposite, RequiredFieldValidation, CompareFieldsValidation, EmailValidation } from '../../../presentation/helpers/validators'
 import { Validation } from '../../../presentation/protocols/validation'
-import { RequiredFieldValidation } from '../../../presentation/helpers/validators/required-field-validation'
-import { CompareFieldsValidation } from '../../../presentation/helpers/validators/compare-fields-validation'
-import { EmailValidation } from '../../../presentation/helpers/validators/email-validation'
 
 export const makeSignUpValidation = (): ValidationComposite => {
   const validations: Validation[] = []
