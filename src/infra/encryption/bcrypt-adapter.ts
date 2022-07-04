@@ -1,7 +1,8 @@
 import * as bcrypt from 'bcryptjs';
 import { Encrypter } from '../../data/protocols/encryption/encrypter'
+import { HashComparer } from '../../data/protocols/encryption/hash-comparer';
 
-export class BcryptAdapter implements Encrypter {
+export class BcryptAdapter implements Encrypter, HashComparer {
   private readonly salt: number
 
   constructor(salt: number) {
