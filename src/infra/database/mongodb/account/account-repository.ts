@@ -1,5 +1,5 @@
 import { stringify } from 'querystring'
-import { AddAccountRepository } from '../../../../data/protocols/add-account-repository'
+import { AddAccountRepository } from '../../../../data/protocols/database/add-account-repository'
 import { AccountModel } from '../../../../domain/models/account'
 import { AddAccountModel } from '../../../../domain/usecases/add-account'
 import { mongoHelper } from '../helpers/mongo-helper'
