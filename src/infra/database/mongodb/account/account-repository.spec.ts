@@ -65,7 +65,6 @@ describe('AccountMongoRepository', () => {
     const result = await accountCollection.insertOne(makeFakeAccountData())
     await sut.updateAccessToken(result.insertedId.toHexString(), 'any_token')
     const account = await accountCollection.findOne({ _id: result.insertedId })
-    console.log(account)
     expect(account).toBeTruthy();
     expect(account.accessToken).toBe('any_token')
   })
