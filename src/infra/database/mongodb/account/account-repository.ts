@@ -1,11 +1,12 @@
 import { stringify } from 'querystring'
 import { AddAccountRepository } from '../../../../data/protocols/database/add-account-repository'
 import { LoadAccountByEmailRepository } from '../../../../data/protocols/database/load-account-by-email-repository'
+import { UpdateAccessTokenRepository } from '../../../../data/protocols/database/update-access-token-repository'
 import { AccountModel } from '../../../../domain/models/account'
 import { AddAccountModel } from '../../../../domain/usecases/add-account'
 import { mongoHelper } from '../helpers/mongo-helper'
 
-export class AccountMongoRepository implements AddAccountRepository, LoadAccountByEmailRepository {
+export class AccountMongoRepository implements AddAccountRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository {
 
   async add(accountData: AddAccountModel): Promise<AccountModel> {
     const collection = await mongoHelper.getCollection('accounts')
@@ -23,4 +24,8 @@ export class AccountMongoRepository implements AddAccountRepository, LoadAccount
     return mongoHelper.map(account)
   }
 
+  async updateAccessToken(id: string, token: string): Promise<void> {
+    const collection = await mongoHelper.getCollection('accounts')
+    await collection.updateOne({ _id: id }, { $set: { accessToken: token } })
+  }
 } 
