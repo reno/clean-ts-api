@@ -60,4 +60,14 @@ describe('AccountMongoRepository', () => {
     expect(account).toBeFalsy();
   })
 
+  test('Should update the account access token on UpdateAccessToken success', async () => {
+    const sut = makeSut()
+    const result = await accountCollection.insertOne(makeFakeAccountData())
+    await sut.updateAccessToken(result.insertedId.toHexString(), 'any_token')
+    const account = await accountCollection.findOne({ _id: result.insertedId })
+    console.log(account)
+    expect(account).toBeTruthy();
+    expect(account.accessToken).toBe('any_token')
+  })
+
 })
