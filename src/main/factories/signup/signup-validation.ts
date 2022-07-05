@@ -1,7 +1,7 @@
 import { SignUpController } from '../../../presentation/controlllers/signup/signup'
 import { EmailValidatorAdapter } from '../../../utils/email-validator-adapter'
 import { DbAddAccount } from '../../../data/usecases/add-account/db-add-account'
-import { BcryptAdapter } from '../../../infra/encryption/bcrupt-adapter/bcrypt-adapter'
+import { BcryptAdapter } from '../../../infra/encryption/bcrypt-adapter/bcrypt-adapter'
 import { AccountMongoRepository } from '../../../infra/database/mongodb/account/account-repository'
 import { LogMongoRepository } from '../../../infra/database/mongodb/log/log-repository'
 import { Controller } from '../../../presentation/protocols'
