@@ -30,6 +30,6 @@ describe('Auth routes', () => {
         })
         .expect(200)
     })
-  }
-  
+  })
+
 })
