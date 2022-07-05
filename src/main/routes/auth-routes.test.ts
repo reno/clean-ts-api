@@ -52,6 +52,16 @@ describe('Auth routes', () => {
         })
         .expect(200)
     })
+
+    test('Should return 401 on login with invalid credentials', async () => {
+      await request(app)
+        .post('/api/login')
+        .send({
+          email: 'any@mail.com',
+          password: 'any_password',
+        })
+        .expect(401)
+    })
   })
 
 })
